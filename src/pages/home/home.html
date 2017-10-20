@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button (click)="logout()">Logout</button>
+
+  <ion-textarea rows="20" value="
+  TabsPage:
+    -ngOnInit:
+      this.numberProvider.getEmitter().subscribe(x => {
+        console.log(x);
+        this.tabRef.select(1);    <---- crashes after pressing Logout => Login => button 2
+      })
+
+
+    - Button 1:
+      this.tabRef.select(1);
+
+    - Button 2:
+      emits a number"></ion-textarea>
+</ion-content>
